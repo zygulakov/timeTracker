@@ -2,6 +2,7 @@
 using SessionCapture.Utility;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -101,6 +102,11 @@ namespace SessionCapture
                     helper.Warn(e.Message);
                 }
 
+            }
+            if (command.Equals(Command.MANUAL))
+            {
+                
+                helper.Info("read: README.md in github"); 
             }
 
         }
