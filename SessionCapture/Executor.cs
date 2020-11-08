@@ -90,9 +90,9 @@ namespace SessionCapture
                 try
                 {
 
-                    string comment = string.Join(' ',ids);
+                    string comment = string.Join(' ', ids);
                     manager.StartNewSession(comment);
-                    
+
                     helper.Info($"session created");
                     helper.Print(manager.List());
                 }
@@ -103,12 +103,30 @@ namespace SessionCapture
                 }
 
             }
+            //Manual
             if (command.Equals(Command.MANUAL))
             {
-                
-                helper.Info("read: README.md in github"); 
-            }
 
+                helper.Info("read: README.md in github");
+            }
+            //CALCULATE
+            if (command.Equals(Command.CALCULATE))
+            {
+                TimeSpan total = TimeSpan.Zero;
+                foreach (string strId in ids)
+                {
+                    int id = int.Parse(strId);
+                    Session ses = manager.List().Find(s => s.Id == id);
+                    if (ses != null)
+                    {
+                        helper.Print(ses.ToString());
+                        total += ses.EndTime - ses.StartTime;
+                    }
+                    else throw new Exception("cant find specified id");
+                }
+                helper.Print("----------------------------");
+                helper.Print($"Total: {total.TotalMinutes} mins  =  {total.TotalHours.ToString("N2")} hours");
+            }
         }
     }
 }

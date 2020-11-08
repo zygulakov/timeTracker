@@ -6,6 +6,6 @@ namespace SessionCapture
 {
     public enum Command
     {
-        NEW_SESSION,END_SESSION,REMOVE_SESSION,LIST_SESSION,MANUAL
+        NEW_SESSION,END_SESSION,REMOVE_SESSION,LIST_SESSION,MANUAL,CALCULATE
     }
 }

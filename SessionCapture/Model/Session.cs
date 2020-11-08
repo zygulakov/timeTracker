@@ -20,7 +20,7 @@ namespace SessionCapture.Model
         public override string ToString()
         {
             string startTime = StartTime != DateTime.MinValue ? StartTime.ToShortTimeString() : "...";
-            string endTime = EndTime != DateTime.MinValue ? EndTime.ToShortTimeString() : "...";
+            string endTime = EndTime != DateTime.MinValue ? EndTime.ToShortTimeString() : "...     ";
             return $"Session:[{Id}] | {startTime} - {endTime} | {Comment}";
         }
     }

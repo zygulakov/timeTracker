@@ -35,6 +35,9 @@ namespace SessionCapture
                 case "clear":
                     Console.Clear();
                     break;
+                case "calc":
+                    executor.Run(line,Command.CALCULATE);
+                    break;
                 default:
                     helper.Info("Unknow command use -man for reference");
                     break;
