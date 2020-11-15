@@ -41,7 +41,7 @@ namespace SessionCapture.Utility
         public string[] ParseArgs(string arg, Command command)
         {
             string[] splitted = arg.Split(' ');
-            //REMOVE => -arg [id] [id] [id]
+            //REMOVE => arg [id] [id] [id]
             return splitted.Length > 1 ? splitted[1..] : new string[0];
 
         }
